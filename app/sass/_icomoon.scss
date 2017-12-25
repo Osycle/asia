@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?kefr26');
+  src:  url('../fonts/icomoon.eot?kefr26#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?kefr26') format('truetype'),
+    url('../fonts/icomoon.woff?kefr26') format('woff'),
+    url('../fonts/icomoon.svg?kefr26#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="i-ls-"], [class*=" i-ls-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  font-size: 2em;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.i-ls-desk:before {
+  content: "\e900";
+}
+.i-ls-double-bed:before {
+  content: "\e901";
+}
+.i-ls-kitchen:before {
+  content: "\e902";
+}
+.i-ls-facebook-circle:before {
+  content: "\e903";
+}
+.i-ls-sofa:before {
+  content: "\e904";
+}
+.i-ls-television:before {
+  content: "\e905";
+}
+.i-ls-wardrobe:before {
+  content: "\e906";
+}
