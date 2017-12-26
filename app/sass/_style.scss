@@ -644,12 +644,11 @@ $header-height: 120px;
 	text-align: right;
   margin: auto auto;
   //padding: 0 2.5%;
-  
 	a{
 		display: block;
 		z-index: 1;
 		font-weight: 600;
-		padding: 15px 10px;
+		padding: 20px 12px;
 		
 	}
 	li{
@@ -768,24 +767,7 @@ $header-height: 120px;
 		}
 
 	}
-	.sub-menu-2{
 
-		margin: 0 5px;
-		perspective: 500px;
-		transform-style: preserve-3d;
-		transform: scale(0.9) perspective(500px) rotateY(65deg);
-		transform: matrix(1, 0, 0, 1, 80, 0);
-		transform-origin: 0 0;
-		z-index: 2;
-		top: 0;
-		left: 100%;
-		&.left{
-			transform: matrix(1, 0, 0, 1, -80, 0);
-			right: 100%;
-			left: initial;
-		}
-
-	}
 
 
 }// END NAVMENU
@@ -803,7 +785,7 @@ $header-height: 120px;
     right: 0;
     line{
     	stroke: #F1F1F1;
-	    stroke-width: 10px;
+	    stroke-width: 2px;
 	    //stroke-dasharray: 360;
 	    //stroke-dashoffset: 0;
     }
@@ -817,8 +799,15 @@ $header-height: 120px;
     line{
     	stroke: $color_1;
 	    stroke-width: 10px;
-	    //stroke-dasharray: 360;
-	    //stroke-dashoffset: 0;
+	    transition: all 5s linear;
+	    stroke-dasharray: 130;
+	    stroke-dashoffset: 0;
+    }
+    &.in{
+    	line{
+    		//infinite
+    		//animation: menuLineHover 7.5s linear infinite;
+    	}
     }
 	}
 
@@ -1525,7 +1514,7 @@ main{
 
 main{
 	.container{
-		border: 1px solid forestgreen;
+	//	border: 1px solid forestgreen;
 		height: 100vh;
 		position: relative;
 	}
@@ -1536,28 +1525,86 @@ main{
 }
 
 
+@keyframes bgLineIn{
+  from {
+    stroke-dashoffset: 200%;
+  }
+  to {  
+    stroke-dashoffset: 50%;
+  }
+}
+@keyframes bgLineInReverse{
+  from {
+    stroke-dashoffset: -150%;
+  }
+  to {  
+    stroke-dashoffset: 50%;
+  }
+}
 
+@keyframes bgLineOut{
+  from {
+    stroke-dashoffset: 50%;
+  }
+  to {  
+    stroke-dashoffset: -150%;
+  }
+}
+@keyframes bgLineOutReverse{
+  from {
+    stroke-dashoffset: 50%;
+  }
+  to {  
+    stroke-dashoffset: 200%;
+  }
+}
 .bg-lines{
+	pointer-events: none;
 	.svg-line{
     //width: 10px;
     position: absolute;
     height: 100%;
-    width: 75px;
-    display: none;
+    width: 95px;
     line{
-    	stroke: #F1F1F1;
-	    stroke-width: 75px;
-	    //stroke-dasharray: 360;
-	    //stroke-dashoffset: 0;
+    	stroke: white;
+	    stroke-width: 1px;
     }
 	}
+	&.in{
+		.line-left{animation: bgLineInReverse 3s ease-in-out 1;}
+		.line-center{animation: bgLineIn 3s ease-in-out 1;}
+		.line-right{animation: bgLineInReverse 4s ease-in-out 1;}
+
+		.svg-line{
+			stroke-dasharray: 200%;
+    	stroke-dashoffset: 50%;
+		}
+
+	}
+	&.out{
+		.line-left{animation: bgLineOutReverse 3s ease-in-out 1;}
+		.line-center{animation: bgLineOut 4s ease-in-out 1;}
+		.line-right{animation: bgLineOutReverse 3s ease-in-out 1;}
+
+		.svg-line{
+			stroke-dasharray: 200%;
+    	stroke-dashoffset: 200%;
+		}
+	}
+
   .line-left{
   	left: 0;
+  	animation: bgLine 3s ease-in-out 1 1s;
   }
   .line-center{
-  	left: calc(50% - 37.2px );
+  	left: calc(50% - 47.5px );
+  	line{stroke-width: 0.75px;}
+  	//animation: bgLineReverse 60s ease-in-out infinite;
   }
   .line-right{
+  	//animation: bgLineReverse 60s ease-in-out infinite 1s;
+  	stroke-dasharray: 200%;
+    stroke-dashoffset: 50%;
   	right: 0;
   }
 
@@ -1844,6 +1891,7 @@ main{
 	right: 0;
 	left: 0;
 	font-family: $font-family-2;
+	font-weight: 500;
 	position: absolute;
 	color: white;
 	min-height: 100px;
@@ -1851,23 +1899,46 @@ main{
 .f-nav-circle{
 	text-align: center;
 	li{
-		margin: 0 2.5px;
+		margin: 0 3px;
 		display: inline-block;
 		border-radius: 50%;
 		background-color: white;
-		width: 10px;
-		height: 10px;
-		&.active{
+		width: 12px;
+		height: 12px;
+		transition: all 0.3s ease-in-out;
+		&.active, &:hover, &:focus{
 			background-color: $color_1;
 		}
+
 	}
 }
 .f-nav-line{
 	span{
-		width: 50px;
-		height: 30px;
-		border: 1px solid;
+    width: 50px;
+    height: 25px;
+    border: 2px solid rgba(white, 0.8);
+    border-radius: 12px;
+    display: block;
+    margin: auto;
+    i{
+    	width: 6px;
+    	height: 5px;
+    	border-radius: 50%;
+    	background-color: white;
+    	display: inline-block;
+    	vertical-align: middle;
+    	margin-bottom: 1px;
+    	position: relative;
+    	left: 10%;
+    }
+	}
+}
+.f-soc-contact{
+	.fa{
+		border: 1px solid white;
 		border-radius: 50%;
+		font-size: 1em;
+		//padding: 10px;
 	}
 }
 
