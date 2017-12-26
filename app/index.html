@@ -38,8 +38,7 @@
 		<!-- HEADER TOP -->
 		<div class="skin-header-top hidden-sm hidden-xs">
 			<div class="container">
-				<!-- HEADER NAVBAR -->
-				<div class="header-navbar">
+				<div class="row">
 					<!-- LOGOTYPE -->
 		      <div class="logo">
 		      	<a  href="index.html" ><img src="img/logo.png"/></a>
@@ -47,25 +46,35 @@
 		      </div>
 
 					<!-- MAIN NAVBAR -->
+					
 				 	<nav class="main-navbar">
 		       	<div class="nav-menu">
 			       	<div class="nav-header">
 			          <ul class="menu-list">
-									<li><a href="index.html">О компании</a></li>
+									<li><a href="">О компании</a></li>
 									<li><a href="">Наши услуги</a></li>
-									<li><a href="">Наши проекты</a></li>
+									<li class="active"><a href="">Наши проекты</a></li>
 									<li><a href="">Новости</a></li>
 									<li><a href="">Сотрудничество</a></li>
 									<li><a href="">Контакты</a></li>
 							  </ul>
+								 <div class="menu-border">
+						  		<svg class="line-full">
+								  	<line x1="0" y1="100%" x2="100%" y2="100%"></line>
+								  </svg>
+								  <svg class="line-item">
+								  	<line x1="0" y1="100%" x2="100%" y2="100%"></line>
+								  </svg>
+
+							  </div>
 			      	</div>
+
 			      </div>
 				  </nav><!-- ./MAIN NAVBAR -->
 
 
 
-
-			  </div><!-- ./HEADER NAVBAR -->
+				</div><!-- ./ROW -->
 			</div><!-- ./CONTAINER -->
 		</div><!-- ./HEADER TOP -->
 		
@@ -132,6 +141,10 @@
 	   </section>
 	</div>
 
+
+
+
+	<!-- PRELOADER -->
 	<div class="preloader">
 		<div class="loader">
 			<span class="img-content">
@@ -145,30 +158,37 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	<!-- MAIN -->
 	<main class="container-fluid">
 
 
+		<div class="row">
+			<div class="container">
+				  <div class="bg-lines">
+					  <svg class="svg-line line-left">
+					  	<line x1="100%" y1="0" x2="100%" y2="100%" />
+					  </svg>
+					  <svg class="svg-line line-center">
+					  	<line x1="50%" y1="0" x2="50%" y2="100%" />
+					  </svg>
+					  <svg class="svg-line line-right">
+					  	<line x1="0" y1="0" x2="0" y2="100%" />
+					  </svg>
+				  </div>
+			</div>
+		</div>
+
+
+
+
+
 
 		<div class="social">
-			<ul><li><a href=""><i class="i-ls-facebook-circle"></i></a></li></ul>
+			<ul>
+				<li><a href=""><i class="i-ls-facebook-circle"></i></a></li>
+			</ul>
 		</div>
+
 
 
 
@@ -191,7 +211,36 @@
 
 
 	<!-- FOOTER -->
-	<footer id="footer" class="container-fluid align-center-sm"></footer>
+	<footer id="footer" class="container-fluid align-center-sm">
+		<div class="container">
+
+			<div class="f-page-num col-md-1">
+				<span class="color-1">01</span> / 06 
+			</div>
+
+			<div class="f-nav-circle col-md-4">
+				<ul>
+					<li class="active"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul> 
+			</div>
+
+			<div class="f-nav-line col-md-2">
+				<span>
+					<i></i>
+				</span>
+			</div>
+
+			<div class="f-soc-contact">
+				<i></i>
+				<span></span>
+			</div>
+		</div>
+	</footer>
 	
 
 

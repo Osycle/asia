@@ -172,41 +172,74 @@ $(function(){
 	})();
 
 
+	function menuBorder(){
+		var arr = [];
+		var menu = 		$(".menu-list"),
+				border = 	$(".menu-border");
 
-	function onLoaded  (){
-					
-	//MASONRY
-	if( $('.grid-img').length )
-		$('.grid-img').masonry({
-		  itemSelector: '.grid-img-item',
-		  columnWidth: '.grid-img-sizer',
-		  percentPosition: true
-		});
+		function moveBorder(li){
+
+			var liWidth = li.outerWidth(true),
+					liPos = 	li.position().left;
+
+			$(border).find(".line-item").css( {
+
+				"width": liWidth,
+				"left": liPos
+
+			});
+		}
+		$(menu).find("li").hover(
+			function() {
+				var self = $(this);
+				moveBorder(self)
+				console.log( $(this).outerWidth(true) );
+			},
+			function() {
+
+				var self = menu.find(".active");
+				moveBorder(self)
+			})
+		$(".menu-list li").map( function (i, el){
+
+			arr.push( $(el).outerWidth(true) );
+		})
+		console.log(arr);
+
+	}
+	function onLoaded() {
+
+		//MENU
+
+		resizer( function(){
+			$(".menu-border").width( $(".menu-list").width() )
+		} )
+		$(".menu-list li")
+
+		menuBorder();
+
+		//MASONRY
+		if( $('.grid-img').length )
+			$('.grid-img').masonry({
+			  itemSelector: '.grid-img-item',
+			  columnWidth: '.grid-img-sizer',
+			  percentPosition: true
+			});
+
 	}
 
 
-	if ( !$(".short-news-content").text().trim().length )
-		if ( $(".search-not-found").length )
-			$(".search-not-found").addClass("show");
-
-	//RESIZE
-	$( window ).on("resize", function(e){});
 
 	//SCROLL
 	var header_status = false;
 	$( window ).on("scroll", function(e){
 
 		if($(window).scrollTop() > 300 && header_status == false){
-
 			header_status = true;
-
 			if ( $(".min-menu") ) $(".min-menu").addClass("scrolled");
-
 		}else if($(window).scrollTop() < 300 && header_status == true){
-
 			header_status = false;
 			if ( $(".min-menu") ) $(".min-menu").removeClass("scrolled");
-
 		}
 
 	});
@@ -239,7 +272,7 @@ $(function(){
 
 			setTimeout( function (){
 
-				$(".preloader").fadeToggle();
+				$(".preloader").fadeOut();
 				//$( "body" ).css("overflow-y", "auto");
 				onLoaded();
 
@@ -352,7 +385,13 @@ var isWebkit = /Webkit/i.test(navigator.userAgent),
 
 // COMMON FUNCTION
 
-function checkView( width ){
+function resizer(f) {
+	if( typeof f == "function" ) f();
+	$( window ).on("resize", function(e){
+		if( typeof f == "function" ) f();
+	});
+}
+function checkView( width ) {
 	return ($( document ).width() > width);
 }
 
@@ -372,7 +411,7 @@ function scrolledDiv(el) {
 		elBottom = elTop + $(el).height()/1.8;
 	}catch(err){console.error();}
 
-  	return ((elBottom <= docViewBottom) && (elTop >= docViewTop));
+  return ((elBottom <= docViewBottom) && (elTop >= docViewTop));
 }
 
 
