@@ -15,6 +15,15 @@ $path: "../fonts";
 }
 
 
+@font-face {
+    font-family: 'Days';
+    src: url($path+'/Days.eot');
+    src: url($path+'/Days.eot') format('embedded-opentype'),
+         url($path+'/Days.woff2') format('woff2'),
+         url($path+'/Days.woff') format('woff'),
+         url($path+'/Days.ttf') format('truetype'),
+         url($path+'/Days.svg#Days') format('svg');
+}
 
 
 /* open-sans-300 - latin_cyrillic */
