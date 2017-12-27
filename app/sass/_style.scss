@@ -574,6 +574,18 @@ button:hover, button:focus{
 }
 
 
+#page{
+	left: 0%;
+	position: relative;
+	&.in{
+		.line-item{
+			
+		}
+		.line-full{
+			animation: menuLineFullIn 4s ease-in-out 1 1s;
+		}
+	}
+}
 
 
 /*
@@ -771,11 +783,21 @@ $header-height: 120px;
 
 
 }// END NAVMENU
+@keyframes menuLineFullIn{
+  from {
+   // stroke-dashoffset: 0;
+  }
+
+  from {  
+		stroke-dashoffset: -100%;
+		stroke-dasharray: 20%;
+  }
+}
 
 .menu-border{
   position: absolute;
   width: 70%;
-  height: 2px;
+  height: 1px;
   right: 0;
   bottom: 0;
 	.line-full{
@@ -783,32 +805,29 @@ $header-height: 120px;
     height: 100%;
     width: 100%;
     right: 0;
+		stroke-dashoffset: 100%;
+		stroke-dasharray: 250%;
+		stroke: white;
+		stroke-width: 1px;
+		stroke-opacity: 0.5;
+		transition: stroke-opacity 0 ease 5s;
     line{
-    	stroke: #F1F1F1;
-	    stroke-width: 2px;
-	    //stroke-dasharray: 360;
-	    //stroke-dashoffset: 0;
+
     }
 	}
 	.line-item{
     position: absolute;
-    transition: all 0.3s ease-in-out;
     height: 100%;
     width: 100%;
     right: 0;
-    line{
-    	stroke: $color-1;
-	    stroke-width: 10px;
-	    transition: all 5s linear;
-	    stroke-dasharray: 130;
-	    stroke-dashoffset: 0;
-    }
-    &.in{
-    	line{
-    		//infinite
-    		//animation: menuLineHover 7.5s linear infinite;
-    	}
-    }
+    left: -20%;
+
+  	stroke: $color-1;
+    stroke-width: 10px;
+    transition: all 0.3s linear;
+    stroke-dasharray: 650;
+    stroke-dashoffset: 0;
+
 	}
 
 }
@@ -823,9 +842,10 @@ $header-height: 120px;
   height: 100%;
   width: 100%;
   display: block;
-
-  .bg-black{
+  [class*="bg-black"]{
   	height: 100px;
+  }
+  .bg-black{
     background: rgba(white, 1);
     opacity: 1;
     transition: all 0.3s ease-in-out;
@@ -1055,7 +1075,6 @@ input.hamburger:checked ~ .drawer-list{
 			height: 45px;
 			font-size: 1.2em;
 		}
-
 		.input{
 			width: 100%;
 			max-width: initial;
@@ -1335,11 +1354,6 @@ input.hamburger:checked ~ .drawer-list{
 	}
 }
 
-#page{
-	left: 0%;
-	position: relative;
-	transition: all 0.3s ease;
-}
 
 
 /*
@@ -1530,26 +1544,29 @@ main{
 
 
 #footer, .bg-lines{
-		display: none !important;
+		//display: none !important;
 }
 
 
-
-.bg-page{
-	.container{
-		height: 100vh;
-		position: relative;
-	}
-}
 .bg-page{
 	//background-image: url("../img/bg/about-1.jpg");
-	background-position: center center;
-	background-repeat: no-repeat;
 	width: 100vw;
 	height: 100vh;
 	position: absolute;
 	text-align: center;
+	.container{
+		height: 100vh;
+		position: relative;
+	}
+	.layer-1{
+		position: absolute;
+	}
 	.bg-img{
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 100vw;
+		height: 100vh;
 		img{
 	    width: 115vw;
 	    margin-top: -5vw;
@@ -1571,6 +1588,7 @@ main{
 }
 .bg-lines{
 	pointer-events: none;
+	z-index: 1;
 	.svg-line{
     //width: 10px;
     position: absolute;
@@ -1578,7 +1596,8 @@ main{
     width: 95px;
     line{
     	stroke: white;
-	    stroke-width: 1px;
+    	stroke-opacity: 0.3;
+	    stroke-width: 2px;
     }
 	}
 	&.in{
@@ -1609,7 +1628,7 @@ main{
   }
   .line-center{
   	left: calc(50% - 47.5px );
-  	line{stroke-width: 0.75px;}
+  	line{stroke-width: 1px;}
   	//animation: bgLineReverse 60s ease-in-out infinite;
   }
   .line-right{
@@ -1619,26 +1638,6 @@ main{
   	right: 0;
   }
 }
-
-
-
-
-/* .line-shadow-1{
-  box-shadow: 0px 5px 50px 30px rgba(white, 0.8);
-  z-index: 500;
-  position: relative;
-  border: 0;
-  margin: 0;
-}
-.line-shadow-2{
-  box-shadow: 0px -5px 50px 30px rgba(white, 0.8);
-  z-index: 300;
-  margin: 0;
-  position: relative;
-  border: 0;
-}
- */
-
 
 
 
@@ -1672,15 +1671,42 @@ main{
 }
 
 
+.about{
+	&.in{
 
+	}
+	.dot-circle{
+    width: 16px;
+    height: 20px;
+    overflow: visible;
+    margin-left: -10px;
+
+    stroke: white;
+    stroke-width: 4px;
+    fill: transparent;
+		
+	}
+	.dot-circles{
+		.dot-circle:last-child{
+			width: 75px;
+			circle:nth-child(1){
+				stroke-width: 10px;
+			}
+			circle:nth-child(2){
+				stroke-width: 3px;
+			}
+
+				
+		}
+	}
+
+}
 
 
 .main-content{
 	width: 100%;
 	position: relative;
 	height: 100vh;
-
-
 }
 
 .middle-tab{
@@ -1702,8 +1728,10 @@ main{
 
 }
 .text-rotate{
+	font-size: 2em;
 	@media (min-width: 992px){
 		span{
+			font-size: 0.5em;
 			text-transform: uppercase;
 			writing-mode: vertical-rl;
 			transform: scaleY(-1) scaleX(-1);
@@ -1720,7 +1748,7 @@ main{
 .social{
 	li{
 		margin: 5px;
-		width: 100%;
+		width: 25px;
 		display: inline-block;
 		text-align: right;
 	}
@@ -1828,14 +1856,27 @@ main{
 
 #footer{
 	bottom: 0;
-	z-index: 100;
+	z-index: 1;
 	right: 0;
 	left: 0;
 	font-family: $font-family-1;
 	font-weight: 500;
 	position: absolute;
 	color: white;
-	min-height: 100px;
+	padding: 10px 0;
+	//min-height: 100px;
+	font-weight: 700;
+	[class*="f"]{
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	@media (max-width:991px){
+		position: relative;
+		border-top: 1px solid $color-1;
+	}
+}
+.f-page-num{
+	letter-spacing: 1px;
 }
 .f-nav-circle{
 	text-align: center;
@@ -1875,12 +1916,8 @@ main{
 	}
 }
 .f-soc-contact{
-	.fa{
-		border: 1px solid white;
-		border-radius: 50%;
-		font-size: 1em;
-		//padding: 10px;
-	}
+		font-size: 1.5em;
+		letter-spacing: 1px;
 }
 
 

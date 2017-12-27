@@ -14,8 +14,12 @@ $(function(){
 				$(".bg-lines").addClass("out").removeClass("in");
 	}
 	
-	bgLineAnimation(1);
+	//bgLineAnimation(1);
 
+	//$("main").addClass("in");
+
+	//if( !$("#page").hasClass("in") ) $("#page").addClass("in");
+	
 
 
 	function menuBorder(){
