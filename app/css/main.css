@@ -16512,24 +16512,69 @@ http://flickity.metafizzy.co
   display: table-cell;
   vertical-align: middle; }
 
+.pie-0 {
+  width: 0%; }
+
+.pie-1 {
+  width: 0.1%; }
+
+.pie-2 {
+  width: 0.2%; }
+
+.pie-3 {
+  width: 0.3%; }
+
+.pie-4 {
+  width: 0.4%; }
+
+.pie-5 {
+  width: 0.5%; }
+
+.pie-6 {
+  width: 0.6%; }
+
+.pie-7 {
+  width: 0.7%; }
+
+.pie-8 {
+  width: 0.8%; }
+
+.pie-9 {
+  width: 0.9%; }
+
+.pie-10 {
+  width: 1%; }
+
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 20px;
   position: absolute; }
 
 ::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
   z-index: 500;
-  background-color: #05123a; }
+  background-color: rgba(255, 255, 255, 0.5);
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, rgba(255, 255, 255, 0)), color-stop(60%, rgba(255, 255, 255, 0.5)), color-stop(50%, rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 50%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 50%);
+  /*  
+	border-radius: 10px; 
+	background: radial-gradient(circle closest-side, rgba(white,0.7) 10px, 
+                    rgba(white,0) 11px, rgba(white,0) 30px, transparent 31px); 
+*/ }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #030b23; }
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, rgba(255, 255, 255, 0)), color-stop(60%, white), color-stop(50%, rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 50%, white 60%, rgba(255, 255, 255, 0) 50%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, white 60%, rgba(255, 255, 255, 0) 50%); }
 
 ::-webkit-scrollbar-thumb:active {
-  background-color: #01030b; }
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, rgba(255, 255, 255, 0)), color-stop(60%, white), color-stop(50%, rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 50%, white 60%, rgba(255, 255, 255, 0) 50%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, white 60%, rgba(255, 255, 255, 0) 50%); }
 
 ::-webkit-scrollbar-track-piece {
-  background-color: white; }
+  background-color: rgba(255, 255, 255, 0); }
 
 ::-o-scrollbar {
   width: 5px;
@@ -16537,14 +16582,13 @@ http://flickity.metafizzy.co
 
 ::-o-scrollbar-thumb {
   z-index: 500;
-  border-radius: 5px;
-  background-color: #071951; }
+  background-color: rgba(255, 255, 255, 0.5); }
 
 ::-o-scrollbar-thumb:hover {
-  background-color: #030b23; }
+  background-color: rgba(255, 255, 255, 0.5); }
 
 ::-o-scrollbar-thumb:active {
-  background-color: #01030b; }
+  background-color: rgba(255, 255, 255, 0.5); }
 
 ::-o-scrollbar-track-piece {
   background-color: rgba(255, 255, 255, 0.5); }
@@ -16561,13 +16605,13 @@ http://flickity.metafizzy.co
 
 html {
   -ms-scrollbar-track-color: transparent;
-  -ms-scrollbar-face-color: #05123a;
-  -ms-scrollbar-shadow-color: #05123a;
-  -ms-scrollbar-base-color: #071951;
+  -ms-scrollbar-face-color: rgba(255, 255, 255, 0.5);
+  -ms-scrollbar-shadow-color: rgba(255, 255, 255, 0.5);
+  -ms-scrollbar-base-color: rgba(255, 255, 255, 0.5);
   -ms-scroll-translation: vertical-to-horizontal;
   -ms-scroll-snap-type: mandatory;
-  -ms-scrollbar-3dlight-color: #05123a;
-  -ms-scrollbar-darkshadow-color: #030b23;
+  -ms-scrollbar-3dlight-color: rgba(255, 255, 255, 0.5);
+  -ms-scrollbar-darkshadow-color: rgba(242, 242, 242, 0.5);
   -ms-scrollbar-highlight-color: transparent; }
 
 body {
@@ -17693,9 +17737,7 @@ main {
     width: 100vw;
     height: 100vh; }
     .bg-page .bg-img img {
-      width: 115vw;
-      margin-top: -5vw;
-      margin-left: 15vw; }
+      width: 100vw; }
   .bg-page .bg-wall {
     background-color: #05123a;
     position: absolute;
@@ -17709,7 +17751,7 @@ main {
 
 .bg-lines {
   pointer-events: none;
-  z-index: 1; }
+  z-index: 1000; }
   .bg-lines .svg-line {
     position: absolute;
     height: 100%;
@@ -17765,17 +17807,20 @@ main {
 /* ---- .grid-item ---- */
 .grid-img-sizer,
 .grid-img-item {
-  width: 20%; }
+  width: 25%; }
+  .grid-img-sizer.active,
+  .grid-img-item.active {
+    width: 50%; }
 
 .grid-img-item {
   float: left; }
 
 .grid-img-item img {
   display: block;
-  padding: 3px;
   max-width: 100%; }
 
-.about .dot-circle {
+/* ---- .dot-circles ---- */
+.dot-circles .dot-circle {
   width: 16px;
   height: 20px;
   overflow: visible;
@@ -17784,11 +17829,11 @@ main {
   stroke-width: 4px;
   fill: transparent; }
 
-.about .dot-circles .dot-circle:last-child {
+.dot-circles .dot-circle:last-child {
   width: 75px; }
-  .about .dot-circles .dot-circle:last-child circle:nth-child(1) {
+  .dot-circles .dot-circle:last-child circle:nth-child(1) {
     stroke-width: 10px; }
-  .about .dot-circles .dot-circle:last-child circle:nth-child(2) {
+  .dot-circles .dot-circle:last-child circle:nth-child(2) {
     stroke-width: 3px; }
 
 .main-content {
@@ -17801,13 +17846,15 @@ main {
   height: 100vh;
   vertical-align: middle;
   width: 100vw; }
-  .middle-tab [class*="pie"] {
-    height: 80vh; }
-  @media (max-width: 991px) {
-    .middle-tab [class*="pie"] {
-      height: initial;
-      display: block;
-      width: 100%; } }
+
+.about [class*="pie"] {
+  height: 80vh; }
+
+@media (max-width: 991px) {
+  .about [class*="pie"] {
+    height: initial;
+    display: block;
+    width: 100%; } }
 
 .text-rotate {
   font-size: 2em; }
@@ -17832,45 +17879,73 @@ main {
 .social li {
   margin: 5px;
   width: 25px;
-  display: inline-block;
+  margin: 15px 0;
+  margin-left: auto;
   text-align: right; }
 
 @media (max-width: 991px) {
   .social li {
-    width: initial; } }
+    width: initial;
+    display: inline-block; } }
 
-.pie-0 {
-  width: 0%; }
+.projects .grid-img {
+  overflow: auto;
+  height: 75vh;
+  margin: 120px 0; }
 
-.pie-1 {
-  width: 0.1%; }
+.projects .grid-img-sizer,
+.projects .grid-img-item {
+  width: 25%; }
+  .projects .grid-img-sizer.active,
+  .projects .grid-img-item.active {
+    width: 50%; }
 
-.pie-2 {
-  width: 0.2%; }
+.projects .grid-img-item {
+  float: left; }
 
-.pie-3 {
-  width: 0.3%; }
+.projects .grid-img-item img {
+  display: block;
+  max-width: 100%; }
 
-.pie-4 {
-  width: 0.4%; }
+.projects-items figure {
+  position: relative;
+  overflow: hidden; }
+  .projects-items figure a:focus {
+    outline: none; }
+  .projects-items figure:hover .portfolio-in-hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 1;
+    -webkit-transform: unset;
+    -ms-transform: unset;
+    transform: unset; }
 
-.pie-5 {
-  width: 0.5%; }
+.projects-items img {
+  width: 100%; }
 
-.pie-6 {
-  width: 0.6%; }
-
-.pie-7 {
-  width: 0.7%; }
-
-.pie-8 {
-  width: 0.8%; }
-
-.pie-9 {
-  width: 0.9%; }
-
-.pie-10 {
-  width: 1%; }
+.portfolio-in-hover {
+  text-align: center;
+  padding: 15px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  overflow: hidden;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  opacity: 0;
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3); }
 
 /*
 										 --- FOOTER ---
