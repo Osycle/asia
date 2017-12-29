@@ -1,7 +1,69 @@
 'use strict';
 
+var log = console.log;
+
 (function(){
 $(function(){
+
+
+
+	// JQUERY FUNCTION
+
+	$.fn.setTimeout = function( func, time ){
+		var self = $(this);
+		setTimeout( function(){ func.call(self); }, time ); 
+		return self.valueOf();
+	}
+
+
+
+
+
+	window.preBox = function(){
+		var preBox = $(".pre-box");
+
+		if( preBox.hasClass("in") )
+			preBox.removeClass("in").setTimeout( function(){ $(this).hide(); }, 600 ).find(".box-content");
+		else
+			preBox.show().addClass("in").find(".box-content");
+			//$(".pre-box").removeClass("in").setTimeout( function(){ $(this).hide(); }, 600 );
+		
+
+	}
+	preBox();
+
+
+
+
+
+
+
+
+//-ВКЛЮЧЕНИЕ ЭКРАНА ЗАГРУЗКИ ПРИ ПЕРЕХОДЕ
+$(".aLoad").on("click", "a", function(e){
+
+	if( !/#/.test(this.href) ){
+		e.preventDefault();
+		var self = this;
+		var text = $(self).text().trim();
+		$(".box-content .content h1").attr("data-flicker", text).text(text);
+		 preBox();
+		 setTimeout(function(){ preBox(); }, 2000)
+	}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -14,22 +76,22 @@ $(function(){
 				$(".bg-lines").addClass("out").removeClass("in");
 	}
 	
+
+
 	bgLineAnimation(1);
-
 	$("main").addClass("in");
-
 	if( !$("#page").hasClass("in") ) $("#page").addClass("in");
 	
 
 
-	function menuBorder(){
 
+	function menuBorder(){
 		var menu = 				$(".menu-list"),
 				border = 			$(".menu-border"),
 				menuItem = 		menu.find("li"),
 				lineItem = 		border.find(".line-item");
 
-		activeBorder();
+
 
 		function moveBorder(li){
 			var liWidth = li.outerWidth(true),
@@ -42,6 +104,9 @@ $(function(){
 		function activeBorder(){
 				moveBorder( menu.find(".active") )
 		}
+		activeBorder();
+		lineItem.addClass("active");
+
 
 		menu.hover(
 			function() {
@@ -68,7 +133,7 @@ $(function(){
 		resizer( function(){
 			$(".menu-border").width( $(".menu-list").width() )
 		} )
-		$(".menu-list li")
+		
 
 		menuBorder();
 
@@ -97,7 +162,6 @@ $(function(){
 			imagesTotalCount = 			images.length,
 			imagesLoadedCount = 		0,
 			preloadPercent = 		 		$(".percent");
-
 	for ( var i = 0; i < imagesTotalCount ; i++ ) {
 		var image_clone = new Image();
 				image_clone.onload = 		image_loaded;
@@ -105,7 +169,6 @@ $(function(){
 				image_clone.src = 			images[i].src;
 
 	}
-
 	function image_loaded (){
 		imagesLoadedCount++;
 
@@ -121,7 +184,7 @@ $(function(){
 
 			setTimeout( function (){
 
-				$(".preloader").fadeOut();
+				//$(".preloader").fadeOut();
 				//$( "body" ).css("overflow-y", "auto");
 				onLoaded();
 
@@ -129,6 +192,46 @@ $(function(){
 
 		: void(0);
 	}
+
+
+	//FORM
+	(function() {
+
+		if (!String.prototype.trim) {
+			(function() {
+				// Make sure we trim BOM and NBSP
+				var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+				String.prototype.trim = function() {
+					return this.replace(rtrim, '');
+				};
+			})();
+		}
+
+		[].slice.call( document.querySelectorAll( '.input__field' ) ).forEach( function( inputEl ) {
+
+			if( inputEl.value.trim() !== '' ) {
+				classie.add( inputEl.parentNode, 'input--filled' );
+			}
+
+			// events:
+			inputEl.addEventListener( 'focus', onInputFocus );
+			inputEl.addEventListener( 'blur', onInputBlur );
+		} );
+
+		function onInputFocus( ev ) {
+			classie.add( ev.target.parentNode, 'input--filled' );
+		}
+
+		function onInputBlur( ev ) {
+			if( ev.target.value.trim() === '' ) {
+				classie.remove( ev.target.parentNode, 'input--filled' );
+			}
+		}
+	})();
+
+
+
+
 
 
 

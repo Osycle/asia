@@ -54,7 +54,7 @@ gulp.task('scripts', () =>
 			//'app/js/jquery.fractionslider.js',
 			'app/js/aos.js',
 			//'app/js/owl.carousel.min.js',
-			//'app/js/mo.min.js',
+			//'app/js/mo.min.js', 
 			//'app/js/skrollr.min.js',
 			'app/js/jquery.fancybox.js',
 			'app/js/classie.js',

@@ -34,7 +34,7 @@
 
 	<!-- HEADER -->
 	<div class="header-hidden"></div>
-	<header id="header" class="header-scroll">
+	<header id="header" class="header-scroll aLoad">
 		<!-- HEADER TOP -->
 		<div class="skin-header-top row hidden-sm hidden-xs">
 			<div class="container">
@@ -50,12 +50,12 @@
 		       	<div class="nav-menu">
 			       	<div class="nav-header">
 			          <ul class="menu-list">
-									<li><a href="">О компании</a></li>
-									<li><a href="">Наши услуги</a></li>
+									<li><a href="javascript:void(0)">О компании</a></li>
+									<li><a href="javascript:void(0)">Наши услуги</a></li>
 									<li class="active"><a href="">Наши проекты</a></li>
-									<li><a href="">Новости</a></li>
-									<li><a href="">Сотрудничество</a></li>
-									<li><a href="">Контакты</a></li>
+									<li><a href="javascript:void(0)">Новости</a></li>
+									<li><a href="javascript:void(0)">Сотрудничество</a></li>
+									<li><a href="javascript:void(0)">Контакты</a></li>
 							  </ul>
 								 <div class="menu-border">
 						  		<svg class="line-full">
@@ -104,38 +104,6 @@
 					<li><a href="">Сотрудничество</a></li>
 					<li><a href="">Контакты</a></li>
 			  </ul>
-				<div class="min-menu-cat col-xs-12 hide">
-				  <div class="col-sm-6 col-xs-12 min-menu-cat-item">
-		    		<a href="catalog-article.html"><i class="i-ls-kitchen"></i>
-		    			<p>Кухни</p>
-		    		</a>
-		    	</div>
-		    	<div class="col-sm-6 col-xs-12 min-menu-cat-item">
-		    		<a href="catalog-article.html"><i class="i-ls-wardrobe"></i>
-		    			<p>Шкафы гардеробные</p>
-		    		</a>
-		    	</div>
-		    	<div class="col-sm-6 col-xs-12 min-menu-cat-item">
-		    		<a href="catalog-article.html"><i class="i-ls-double-bed"></i>
-		    			<p>Спальная мебель</p>
-		    		</a>
-		    	</div>
-		    	<div class="col-sm-6 col-xs-12 min-menu-cat-item">
-		    		<a href="catalog-article.html"><i class="i-ls-desk"></i>
-		    			<p>Детская мебель</p>
-		    		</a>
-		    	</div>
-		    	<div class="col-sm-6 col-xs-12 min-menu-cat-item">
-		    		<a href="catalog-article.html"><i class="i-ls-sofa"></i>
-		    			<p>Мягкая мебель</p>
-		    		</a>
-		    	</div>
-		    	<div class="col-sm-6 col-xs-12 min-menu-cat-item">
-		    		<a href="catalog-article.html"><i class="i-ls-television"></i>
-		    			<p>Гостиная мебель</p>
-		    		</a>
-		    	</div>
-		    </div>
 	  	</div>
 	  </section>
 	</div>
@@ -147,11 +115,85 @@
 	<div class="preloader">
 		<div class="loader">
 			<span class="img-content">
-				<img id="pre-logo" src="img/logo.png"/>
+				<!-- <img id="pre-logo" src="img/logo.png"/> -->
 			</span>
 			<span class="percent">0 %</span>
 		</div>
 	</div>
+
+
+
+	<div class="pre-box in">
+		<div class="box-part-1"></div>
+		<div class="box-part-2"></div>
+		<div class="box-content">
+
+			<div class="content-default hide">
+				<h1 data-flicker="Asia construction">Asia construction</h1>	
+			</div>
+			<div class="content"> 
+				<h1 data-flicker="New Asia">New Asia</h1>	
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- BID MODAL-->
+	<div class="bid-modal modal fade animated" id="modal-bid" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<button type="button" class="btn" data-dismiss="modal">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div class="modal-body">
+					<div class="col-md-12 success-info hide">
+						<div id="success-message"></div>
+						<div id="fail-message"></div>
+					</div>
+					<h3>Связаться с нами</h3>
+					<form id="modal-bid-form" method="post" action="" class="contact-form">
+						<input id="validator" class="hide" type="text" name="validator" value="">
+						<!-- NAME -->
+						<span class="input input--jiro input-name">
+							<input class="input__field input__field--jiro" type="text" name="name" autocomplete="off" />
+							<label class="input__label input__label--jiro" for="input-1">
+								<span class="input__label-content input__label-content--jiro">Имя, фамилия</span>
+							</label>
+						</span>
+						<!-- NAME -->
+						<span class="input input--jiro input-name">
+							<input class="input__field input__field--jiro" type="text" name="organization" autocomplete="off" />
+							<label class="input__label input__label--jiro" for="input-1">
+								<span class="input__label-content input__label-content--jiro">Название организации</span>
+							</label>
+						</span>
+						<!-- EMAIL -->
+						<span class="input input--jiro input-email">
+							<input class="input__field input__field--jiro" type="text" name="email" autocomplete="off" />
+							<label class="input__label input__label--jiro" for="input-2">
+								<span class="input__label-content input__label-content--jiro">Электронная почта</span>
+							</label>
+						</span>
+						<!-- TEL -->
+						<span class="input input--jiro input-phone">
+							<input class="input__field input__field--jiro" type="text" name="tel" autocomplete="off" />
+							<label class="input__label input__label--jiro" for="input-3">
+								<span class="input__label-content input__label-content--jiro">Номер телефона</span>
+							</label>
+						</span>
+						<div class="form-footer">
+					      	<button type="submit" class="align-right btn-def submit">
+					      		<b>Отправить</b>
+					      	</button>
+				      	</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
 
 
 
@@ -163,9 +205,251 @@
 
 
 
+		<div class="services">
 
 
-	<div class="services">
+			<div class="bg-page row">
+					<div class="bg-service-1">
+						<div class="bg-img" style="background-image: url('../img/bg/services-1.jpg');"></div>
+					</div>
+					<div class="bg-service-2">
+						<div class="bg-img" style="background-image: url('../img/bg/services-2.jpg');"></div>
+					</div>
+			</div>
+
+			<div class="bg-svg row">
+				<div class="container">
+				  <div class="bg-lines">
+					  <svg class="svg-line line-left">
+					  	<line x1="100%" y1="0" x2="100%" y2="100%" />
+					  </svg>
+					  <svg class="svg-line line-center">
+					  	<line x1="50%" y1="0" x2="50%" y2="100%" />
+					  </svg>
+					  <svg class="svg-line line-right">
+					  	<line x1="0" y1="0" x2="0" y2="100%" />
+					  </svg>
+				  </div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="container">
+					<div class="main-content align-center-sm">
+						<div class="middle-tab">
+
+							<div class="services-content">
+
+								<div class="services-item">
+									<div class="desc-content">
+										<p>Строительно-монтажные и демонтажные работы</p>
+									</div>
+									<span class="btn-def" role="button">
+										<a data-target="#modal-bid">Заказать</a>
+									</span>
+								</div>
+								<div class="services-item">
+									<div class="desc-content">
+										<p>Услуги машин и <br>механизмов</p>
+									</div>
+									<span class="btn-def" role="button">
+										<a role="button" data-toggle="modal" data-target="#modal-bid">Заказать</a>
+									</span>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+<!-- 
+	<div class="projects">
+
+		<div class="bg-page row">
+			<div class="layer">
+				<div class="bg-shadow"></div>
+				<div class="bg-img" style="background-image: url('../img/bg/projects.jpg');"></div>
+			</div>
+		</div>
+
+			<div class="bg-svg row">
+				<div class="container">
+				  <div class="bg-lines">
+					  <svg class="svg-line line-left">
+					  	<line x1="100%" y1="0" x2="100%" y2="100%" />
+					  </svg>
+					  <svg class="svg-line line-center">
+					  	<line x1="50%" y1="0" x2="50%" y2="100%" />
+					  </svg>
+					  <svg class="svg-line line-right">
+					  	<line x1="0" y1="0" x2="0" y2="100%" />
+					  </svg>
+				  </div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="container">
+					<div class="main-content align-center-sm">
+						<div class="middle-tab">
+
+
+							<div class="projects-content">
+
+								<div class="grid-img">
+									<div class="grid-img-sizer"></div>
+
+									<figure class="grid-img-item active">
+										<a href="img/projects/1.jpg">
+											<div class="img-content">
+													<img src="img/projects/1.jpg"/>
+											</div>
+											<span class="project-hover">
+												<div>
+													<h4>Lorem Ipsum</h4>
+													<p>
+														Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+														Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+													</p>
+												</div>
+											</span>
+										</a>
+									</figure>
+									<figure class="grid-img-item">
+										<a href="img/projects/2.jpg">
+											<div class="img-content">
+													<img src="img/projects/2.jpg"/>
+											</div>
+											<span class="project-hover">
+												<div>
+													<h4>Lorem Ipsum</h4>
+													<p>
+														Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+														Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+													</p>
+												</div>
+											</span>
+										</a>
+									</figure>
+									<figure class="grid-img-item">
+										<a href="img/projects/3.jpg">
+											<div class="img-content">
+													<img src="img/projects/3.jpg"/>
+											</div>
+											<span class="project-hover">
+												<div>
+													<h4>Lorem Ipsum</h4>
+													<p>
+														Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+														Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+													</p>
+												</div>
+											</span>
+										</a>
+									</figure>
+									<figure class="grid-img-item">
+										<a href="img/projects/4.jpg">
+											<div class="img-content">
+													<img src="img/projects/4.jpg"/>
+											</div>
+											<span class="project-hover">
+												<div>
+													<h4>Lorem Ipsum</h4>
+													<p>
+														Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+														Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+													</p>
+												</div>
+											</span>
+										</a>
+									</figure>
+									<figure class="grid-img-item">
+										<a href="img/projects/5.jpg">
+											<div class="img-content">
+													<img src="img/projects/5.jpg"/>
+											</div>
+											<span class="project-hover">
+												<div>
+													<h4>Lorem Ipsum</h4>
+													<p>
+														Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+														Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+													</p>
+												</div>
+											</span>
+										</a>
+									</figure>
+									<figure class="grid-img-item">
+										<a href="img/projects/6.jpg">
+											<div class="img-content">
+													<img src="img/projects/6.jpg"/>
+											</div>
+											<span class="project-hover">
+												<div>
+													<h4>Lorem Ipsum</h4>
+													<p>
+														Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+														Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+													</p>
+												</div>
+											</span>
+										</a>
+									</figure>
+									<figure class="grid-img-item">
+										<a href="img/projects/7.jpg">
+											<div class="img-content">
+													<img src="img/projects/7.jpg"/>
+											</div>
+											<span class="project-hover">
+												<div>
+													<h4>Lorem Ipsum</h4>
+													<p>
+														Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+														Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+													</p>
+												</div>
+											</span>
+										</a>
+									</figure>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+	<div class="about">
+
+		<div class="bg-page row">
+			<div class="layer">
+				<div class="bg-shadow"></div>
+				<div class="bg-wall"></div>
+				<div class="bg-img" style="background-image: url('../img/bg/about-1.jpg');"></div>
+			</div>
+		</div>
 
 		<div class="bg-svg row">
 			<div class="container">
@@ -183,286 +467,55 @@
 			</div>
 		</div>
 
-		<div class="bg-page row">
-				<!-- <div class="bg-shadow"></div> -->
-				<div class="bg-service-1">
-					<div class="bg-img" style="background-image: url('../img/bg/services-1.jpg');"></div>
-				</div>
-				<div class="bg-service-2">
-					<div class="bg-img" style="background-image: url('../img/bg/services-2.jpg');"></div>
-				</div>
-		</div>
-
 		<div class="row">
 			<div class="container">
 				<div class="main-content align-center-sm">
 					<div class="middle-tab">
+						<div class="about-content">
 
-
-						<div class="services-content">
-
-							<div class="services-item">
-								<div class="desc-content">
-									<p>Строительно-монтажные и демонтажные работы</p>
-								</div>
-								<span class="btn-def" role="button">
-									<a>Заказать</a>
-								</span>
-							</div>
-							<div class="services-item">
-								<div class="desc-content">
-									<p>Услуги машин и <br>механизмов</p>
-								</div>
-								<span class="btn-def" role="button">
-									<a>Заказать</a>
-								</span>
+							<div class="text-rotate pie-xs-2 m-v-30">
+								<span>Construction Asia</span>
 							</div>
 
-						</div>
-
-
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</div>
-
-
-
-
-
-
-
-
-
-
-<!-- 
-
-	<div class="projects">
-
-		<div class="bg-page row">
-			<div class="layer">
-				<div class="bg-shadow"></div>
-				<div class="bg-img" style="background-image: url('../img/bg/projects.jpg');"></div>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="container">
-				<div class="main-content align-center-sm">
-					<div class="middle-tab">
-
-
-						<div class="projects-content">
-
-							<div class="grid-img">
-								<div class="grid-img-sizer"></div>
-
-								<figure class="grid-img-item active">
-									<a href="img/projects/1.jpg">
-										<div class="img-content">
-												<img src="img/projects/1.jpg"/>
-										</div>
-										<span class="project-hover">
-											<div>
-												<h4>Lorem Ipsum</h4>
-												<p>
-													Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-													Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-												</p>
-											</div>
-										</span>
-									</a>
-								</figure>
-								<figure class="grid-img-item">
-									<a href="img/projects/2.jpg">
-										<div class="img-content">
-												<img src="img/projects/2.jpg"/>
-										</div>
-										<span class="project-hover">
-											<div>
-												<h4>Lorem Ipsum</h4>
-												<p>
-													Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-													Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-												</p>
-											</div>
-										</span>
-									</a>
-								</figure>
-								<figure class="grid-img-item">
-									<a href="img/projects/3.jpg">
-										<div class="img-content">
-												<img src="img/projects/3.jpg"/>
-										</div>
-										<span class="project-hover">
-											<div>
-												<h4>Lorem Ipsum</h4>
-												<p>
-													Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-													Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-												</p>
-											</div>
-										</span>
-									</a>
-								</figure>
-								<figure class="grid-img-item">
-									<a href="img/projects/4.jpg">
-										<div class="img-content">
-												<img src="img/projects/4.jpg"/>
-										</div>
-										<span class="project-hover">
-											<div>
-												<h4>Lorem Ipsum</h4>
-												<p>
-													Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-													Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-												</p>
-											</div>
-										</span>
-									</a>
-								</figure>
-								<figure class="grid-img-item">
-									<a href="img/projects/5.jpg">
-										<div class="img-content">
-												<img src="img/projects/5.jpg"/>
-										</div>
-										<span class="project-hover">
-											<div>
-												<h4>Lorem Ipsum</h4>
-												<p>
-													Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-													Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-												</p>
-											</div>
-										</span>
-									</a>
-								</figure>
-								<figure class="grid-img-item">
-									<a href="img/projects/6.jpg">
-										<div class="img-content">
-												<img src="img/projects/6.jpg"/>
-										</div>
-										<span class="project-hover">
-											<div>
-												<h4>Lorem Ipsum</h4>
-												<p>
-													Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-													Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-												</p>
-											</div>
-										</span>
-									</a>
-								</figure>
-								<figure class="grid-img-item">
-									<a href="img/projects/7.jpg">
-										<div class="img-content">
-												<img src="img/projects/7.jpg"/>
-										</div>
-										<span class="project-hover">
-											<div>
-												<h4>Lorem Ipsum</h4>
-												<p>
-													Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-													Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-												</p>
-											</div>
-										</span>
-									</a>
-								</figure>
+							<div class="text-l-spacing pie-xs-8 m-v-30">
+								<span>Строительство и реконструкция объектов любой <br>сложности
+								<g class="dot-circles">
+									<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
+									<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
+									<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
+									<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
+									<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
+									<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
+									<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
+									<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
+									<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
+									<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
+									<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
+									<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
+									<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
+									<svg class="dot-circle">
+										<circle r="5" cx="50%" cy="50%"/></circle>
+										<circle r="25" cx="50%" cy="50%"/></circle>
+									</svg>
+								</g>
 							</div>
 
+							<div class="social pie-xs-2 m-v-30">
+								<ul>
+									<li><a href=""><img src="img/icons/instagram.png"/></a></li>
+									<li><a href=""><img src="img/icons/facebook.png"/></a></li>
+									<li><a href=""><img src="img/icons/telegram.png"/></a></li>
+									<li><a href=""><img src="img/icons/ok.png"/></a></li>
+								</ul>
+							</div>
 						</div>
 
 					</div>
 				</div>
 			</div>
 		</div>
-
 	</div>
-
  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-		<div class="about">
-
-			<div class="bg-page row">
-				<div class="layer">
-					<div class="bg-shadow"></div>
-					<div class="bg-wall"></div>
-					<div class="bg-img" style="background-image: url('../img/bg/about-1.jpg');"></div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="container">
-					<div class="main-content align-center-sm">
-						<div class="middle-tab">
-							<div class="about-content">
-
-								<div class="text-rotate pie-2 m-v-30">
-									<span>Construction Asia</span>
-								</div>
-
-								<div class="text-l-spacing pie-8 m-v-30">
-									<span>Строительство и реконструкция объектов любой <br>сложности
-									<g class="dot-circles">
-										<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
-										<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
-										<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
-										<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
-										<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
-										<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
-										<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
-										<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
-										<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
-										<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
-										<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
-										<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
-										<svg class="dot-circle"><circle r="2" cx="50%" cy="50%"/></circle></svg>
-										<svg class="dot-circle">
-											<circle r="5" cx="50%" cy="50%"/></circle>
-											<circle r="25" cx="50%" cy="50%"/></circle>
-										</svg>
-									</g>
-								</div>
-
-								<div class="social pie-2 m-v-30">
-									<ul>
-										<li><a href=""><img src="img/icons/instagram.png"/></a></li>
-										<li><a href=""><img src="img/icons/facebook.png"/></a></li>
-										<li><a href=""><img src="img/icons/telegram.png"/></a></li>
-										<li><a href=""><img src="img/icons/ok.png"/></a></li>
-									</ul>
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
--->
-
-
-
 					
 
 
