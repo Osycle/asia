@@ -7,7 +7,7 @@
 */
 
 $color-1: #2678b7;// BLUE
-$color-2: #05123a;// DARK-BLUE
+$color-2: #040a23;// DARK-BLUE
 $color-3: #5FC6F1;// 
 $color-4: #E4097F;//
 
@@ -83,7 +83,7 @@ $easeQua: cubic-bezier(0.25, 0.46, 0.45, 1);
 
 		padding: 0;
 		.panel-title{
-			text-transform: initial;
+			text-transform: none;
 			a{
 				display: inline-block;
 				width: 80%;
@@ -125,9 +125,20 @@ $easeQua: cubic-bezier(0.25, 0.46, 0.45, 1);
 	padding-right: 0;
 }
 [class*='pie']{
-	display: table-cell;
-	vertical-align: middle;
+
 }
+
+
+
+@media (min-width: 992px){
+	[class*='pie-md'], [class*='pie-lg']{
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
+
+
 
 
 @media (min-width:768px){
@@ -135,6 +146,8 @@ $easeQua: cubic-bezier(0.25, 0.46, 0.45, 1);
 	@for $i from 0 through 12{
 		.pie-xs-#{$i}{
 			width: ( 0.0 + ($i/12) )+% ;
+			display: table-cell;
+			vertical-align: middle;
 		}
 	}
 
@@ -145,6 +158,8 @@ $easeQua: cubic-bezier(0.25, 0.46, 0.45, 1);
 	@for $i from 0 through 12{
 		.pie-md-#{$i}{
 			width: ( 0.0 + ($i/12) )+% ;
+			display: table-cell;
+			vertical-align: middle;
 		}
 	}
 
@@ -154,6 +169,9 @@ $easeQua: cubic-bezier(0.25, 0.46, 0.45, 1);
 	@for $i from 0 through 12{
 		.pie-lg-#{$i}{
 			width: ( 0.0 + ($i/12) )+% ;
+			display: table-cell;
+			vertical-align: middle;
+
 		}
 	}
 
@@ -214,8 +232,8 @@ $easeQua: cubic-bezier(0.25, 0.46, 0.45, 1);
 	background-color: rgba(white, 0.5);
 }
 ::selection {
-    background: $color-1;
-    color: #fff;
+    background: $color-2;
+    color:$color-1;
     text-shadow: none;
  }
 html{
@@ -240,8 +258,8 @@ body{
 	text-size-adjust: none;
 	font: 14px $font-family-1;
 	//color: white;
-	//height: auto !important;
-	background-color: black;
+	height: auto !important;
+	background-color: #121527;
 }
 
 
@@ -275,9 +293,11 @@ img{
 	outline: 0;
 }
 h1,h2,h3,h4,h5{
-	font-family: $font-family-2;
 	color: inherit;
 	line-height: 160%;
+}
+h1, h2{
+	font-family: $font-family-2;
 }
 h4{
 	font-size: em(14, 16);
@@ -425,7 +445,7 @@ button:hover, button:focus{
 		left: 0;
 		bottom: 0;
 		right: 0;
-		transform: initial;
+		transform: none;
 		visibility: visible;
 	}
 	&:hover{
@@ -489,7 +509,7 @@ button:hover, button:focus{
 		@extend .claf;
 		width: 0%;
 		height: 1px;
-		top: initial;
+		top: none;
 		bottom: 1px;
 		border-radius: 15px;
 		position: absolute;
@@ -659,6 +679,8 @@ $header-height: 100px;
 		text-transform: uppercase;
 		font-family: $font-family-2;
 		margin-left: 15px;
+		width: 40%;
+		line-height: 150%;
 	}
   & > a{
   	&:focus{
@@ -671,10 +693,12 @@ $header-height: 100px;
   	}
   	text-align: center;
   	span{
-  		font-size: 0.9em;
-  		display: block;
-  		margin-left: 0;
-  		margin-top: 5px;
+	    font-size: 0.9em;
+	    display: block;
+	    margin: auto;
+	    margin-top: 5px;
+	    width: 90%;
+	    text-align: center;
   	}
   }
 }
@@ -882,7 +906,7 @@ $header-height: 100px;
     transition: all 0.3s linear;
     stroke-dasharray: 650;
     stroke-dashoffset: 0;
-    &.active{
+    &.active, &.router-link-active{
     	opacity: 1;
     }
 	}
@@ -902,7 +926,8 @@ $header-height: 100px;
   	height: 100px;
   }
   .bg-black{
-    background: rgba(white, 1);
+    background: rgba($color-2, 1);
+    box-shadow: inset 0px -5px 0px -5px #2678b7;
     opacity: 1;
     transition: all 0.3s ease-in-out;
     width: 100%;
@@ -910,7 +935,10 @@ $header-height: 100px;
     top: 0;
   }
   &.scrolled{
-  	.bg-black{background: rgba(black, 0.9);}
+  	.bg-black{
+  		background: rgba($color-2, 1);
+  		box-shadow: inset 0px 0px 50px 0px #2678b7;
+  	}
   }
 }
 
@@ -920,12 +948,12 @@ label.hamburger{
   top: 28px;
   right: 40px;
 	& > i{
-		background-color: $color-2;
+		background-color: $color-3;
 		&, &:before, &:after{
 			height: 5px;
 		}
 		&:before{
-			background-color: $color-1;
+			background-color: $color-3;
 		}
 		&:after{
 			background-color: $color-3;
@@ -934,13 +962,15 @@ label.hamburger{
 	text{
 		open, close{
 			margin-left: -5px;
-			overflow: initial;
+			overflow: none;
 		}
 	}
 }
 .drawer-list{
 	overflow: hidden;
 	padding-top: 100px;
+	width: 45vw;
+	perspective: 50vw;
 	hr{
 		visibility: hidden;
 	}
@@ -948,7 +978,7 @@ label.hamburger{
 		margin-top: 15px;
 		height: auto;
 	}
-	background-color: rgba(black, 1);
+//	background-color: rgba($color-2, 1);
 	li a{
 		color: white;
 		font-weight: 600;
@@ -962,7 +992,10 @@ label.hamburger{
 	overflow: auto;
 	pointer-events: all;
   padding: 15px 0;
-
+  background-color: rgba($color-2, 1);
+  
+ perspective-origin: top right;
+ transform: rotateY(-20deg) translateX(-5%);
 }
 .min-menu-cat{
 	color: white;
@@ -1137,7 +1170,7 @@ input.hamburger:checked ~ .drawer-list{
 
 		.input{
 			width: 100%;
-			max-width: initial;
+			max-width: none;
 			margin: 35px 0 5px 0;
 			padding-top: 0.2em;
 			padding-bottom: 0;
@@ -1241,8 +1274,8 @@ input.hamburger:checked ~ .drawer-list{
   justify-content: center;
 
   .box-content{
-  	transition: all 0.6s ease-in-out;
-  	transform: scale(1.5);
+  	transition: all 0.5s ease-in-out;
+  	transform: scale(1.2);
   	opacity: 0;
   }
 	.box-part-1, .box-part-2{
@@ -1262,11 +1295,11 @@ input.hamburger:checked ~ .drawer-list{
 	}
 	&.in{
 		.box-content{
-			transform: initial;
+			transform: none;
 			opacity: 1;
 		}
 		[class*="box-part"]{
-			transform: initial;
+			transform: none;
 		}
 	}
 }
@@ -1394,7 +1427,7 @@ h1[data-flicker], h2[data-flicker]{
 	&:before{
 		@extend .claf;
 		opacity: 0.08;
-		top: -10%;
+		top: -40%;
 		content: attr(data-flicker);
 	}
 }
@@ -1427,7 +1460,10 @@ h1, h2, h3, h4{
 h1, h2, h3, h4, h5{
 }
 p{
-	font-size: em(16, 16);
+	font-size: em(15, 16);
+	@media (min-width: 992px ){
+		font-size: em(14, 16);
+	}
 }
 blockquote{
 	padding: 0 15px 0 35px;
@@ -1449,7 +1485,7 @@ main{
 	position: relative;
 	color: white;
 	height: 100vh;
-	transition: all 0.3s ease-in-out;
+	//transition: all 0.3s ease-in-out;
 	p{
 		line-height: 170%;
 	}
@@ -1574,7 +1610,7 @@ main{
 		height: 100vh;
 	}
 	.bg-wall{
-		background-color: $color-2;
+		background: linear-gradient(45deg, darken($color-2, 5%) 0%,$color-2 33%,$color-2 80%,$color-2 100%);
 		position: absolute;
 		width: 35vw;
 		height: 100vh;
@@ -1656,7 +1692,7 @@ main{
 .dot-circles{
 	.dot-circle{
     width: 16px;
-    height: 20px;
+    height: 12px;
     overflow: visible;
     margin-left: -10px;
     stroke: white;
@@ -1678,8 +1714,35 @@ main{
 }
 
 
+#sec{
+	position: relative;
+	transition: all 0.3s ease-in-out;
+	perspective: 100vw;
 
-
+	& > div{
+		transition: opacity 0.4s $easeQua 0.2s,
+								transform 0.6s $easeQua 0s;
+		transform: scale(1);
+		opacity: 1;
+		&.in{
+			opacity: 0;
+			transform: scale(0.5);
+		}
+		&.out{
+			transform: scale(1);	
+		}
+	}
+	&.menuopen{
+		
+	}
+}
+.menu-switch{
+	transition: all 0.5s ease-in-out;
+	&.open{
+		perspective-origin: 0 0 !important;
+		transform: rotateY(75deg) translateX(-20%) !important;	
+	}
+}
 
 
 
@@ -1694,7 +1757,7 @@ main{
 	position: relative;
 	height: 100vh;
 	@media (max-width:991px){
-		height: initial;
+		height: auto;
 	}
 }
 .middle-tab{
@@ -1702,6 +1765,10 @@ main{
   height: 100vh;
   vertical-align: middle;
   width: 100vw;
+	position: relative;
+  & > div:first-child{
+  	margin-top: 80px;
+  }
 }
 
 
@@ -1724,7 +1791,7 @@ main{
   }
   @media (max-width: 991px){
   	[class*="pie"]{
-  		height: initial;
+  		height: auto;
   		display: block;
   		width: 100%;
   	}
@@ -1753,6 +1820,9 @@ main{
   text-transform: uppercase;
   font-weight: 700;
   line-height: 175%;
+  p{
+  	display: inline-block;
+  }
 }
 .social{
 	li{
@@ -1764,7 +1834,7 @@ main{
 	}
 	@media (max-width: 991px){
 		li{
-			width: initial;
+			width: none;
 			display: inline-block;
 		}
   }
@@ -1811,7 +1881,7 @@ main{
 
 	@media (max-width:991px){
 		.grid-img{
-			height: initial;
+			height: auto;
 			margin: auto auto;
 		}
 		.grid-img-item img {
@@ -1853,7 +1923,7 @@ main{
 }
 .project-hover{
 	text-align: center;
-	padding: 15px 20px;
+	padding: 5% 12%;
 	padding-top: 5px;
 	transition: all 0.3s ease-in-out;
 	position: absolute;
@@ -1888,33 +1958,37 @@ main{
   	background-position: 50% 25px;
   }
 }
-
+// SERVICES
 .services{
 	.bg-svg{
 		z-index: 1;
 	}
 	.bg-page{
+		text-align: center;
+		display: flex;
+		@media (max-width:991px){
+			flex-flow: wrap column;
+		}
 		.bg-img{
 			position: absolute;
-			
-			width: 50vw;
-/* 			transition: all 0.3s ease-in-out;
-			&:hover{
-				transform: scale(1.05);
-			} */
+			width: 100%;
 		}
 		[class*="bg-service"]{
-		  overflow: hidden;
-		  width: 50vw;
-		  height: 100%;
-		  position: absolute; 
-		  ;
+		  //overflow: hidden;
+		  //width: 33vw;
+		 //height: 100%;
+		 position: relative; 
+
+		 	justify-content: center;
+			align-items: center;
+			flex-basis: 100%;
+			flex: 1 1;
 		}
 		.bg-service-2{
 			.bg-img{
 				//animation: serviceDrive 8s linear infinite;
 			}
-			margin-left: 50vw;
+			//margin-left: 33vw;
 		}
 
 	}
@@ -1974,6 +2048,51 @@ main{
 
 
 
+.news{
+	@media (min-width: 992px ){
+		.pagination-div{
+			position: fixed;
+	    left: 0;
+	    bottom: 50px;
+	    //margin-left: -7px;
+		}
+	}
+	@media ( max-width: 991px ){
+		.img-content, .desc-content{
+			width: 100%;
+			float: left;
+		}
+	}
+}
+.news-content{
+	margin-top: 0px !important;
+	figure{
+		height: auto;
+		margin: 15px 0;
+	}
+	.desc-content{
+		padding: 0 10px;
+		p, h3, h4{
+			font-size: 0.9em;
+		}
+		.date{
+			float: right;
+		}
+		h3, h4, h5{
+			display: inline-block;
+		}
+	}
+	.link-content{
+		padding: 10px 0;
+		color: $color-1;
+	}
+	.img-content{
+		img{
+			width: 165px;
+			//height: 140px;
+		}
+	}
+}
 
 
 
@@ -1991,7 +2110,121 @@ main{
 
 
 
+.cooperation{
+	.bg-img{
+		opacity: 0.2;
+	}
+	@media (min-width: 992px){		
+		.bg-img{
+			width: 50vw;
+			margin-left: auto;
+			position: relative;
+			//top: 13vh;	
+			margin-top: 100px;
+    	height: 75vh;
+			opacity: 1;
+			margin-right: -15px;
+		}
+	}
 
+}
+.cooperation-content{
+	margin-top: 50px;
+	.btn-def{
+		border-radius: 0;
+		width: 180px;
+		margin: 30px 0;
+	}
+}
+.cooperation-img{
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  display: block;
+  height: 100%;
+  right: 0;
+  padding: 0 15px;
+  top: 0;
+  img{
+  	max-width: none;
+  	width: 50vw;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contacts{
+	.bg-img{
+		//opacity: 0.2;
+	}
+	.map-content{
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		display: block;
+		color: black;
+	}
+	@media (max-width: 991px){
+		.middle-tab{
+			height: auto;
+		}
+		.bg-page, .map-content{
+			position: relative;
+			height: 400px;
+		}
+	}
+	@media (min-width: 992px){		
+		.bg-wall{
+	    width: 50vw;
+	    margin-left: 50vw;
+	   	background-image: url(../img/bg/contacts-wall.jpg);
+	    background-repeat: no-repeat;
+	    background-size: cover;
+		}
+		.map-content{
+			width: 50%;
+			margin-top: 115px;
+    	height: 75vh;
+			z-index: 3;
+			position: absolute;
+		}
+	}
+
+}
+.contacts-content{
+	.contacts-info{
+		p{
+			line-height: 200%;
+			font-size: 1em;
+		}
+	}
+}
+.contacts-img{
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  display: block;
+  height: 100%;
+  right: 0;
+  padding: 0 15px;
+  top: 0;
+  img{
+  	max-width: none;
+  	width: 50vw;
+  }
+}
 
 
 
@@ -2016,7 +2249,7 @@ main{
 
 #footer{
 	bottom: 0;
-	z-index: 1;
+	z-index: 3;
 	right: 0;
 	left: 0;
 	font-family: $font-family-1;
@@ -2026,6 +2259,7 @@ main{
 	padding: 10px 0;
 	//min-height: 100px;
 	font-weight: 700;
+	pointer-events: none;
 	[class*="f"]{
 		margin-top: 15px;
 		margin-bottom: 15px;
@@ -2037,24 +2271,33 @@ main{
 }
 .f-page-num{
 	letter-spacing: 1px;
+	pointer-events: auto;
 }
 .f-nav-circle{
 	text-align: center;
 	li{
-		margin: 0 3px;
+		pointer-events: auto;	
+		margin: 0 4px;
 		display: inline-block;
 		border-radius: 50%;
 		background-color: white;
 		width: 12px;
 		height: 12px;
 		transition: all 0.3s ease-in-out;
-		&.active, &:hover, &:focus{
+		&.active, &.router-link-active, &:hover, &:focus{
 			background-color: $color-1;
 		}
-
+		a{
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			top: -2px;
+			position: relative;
+		}
 	}
 }
 .f-nav-line{
+
 	span{
     width: 50px;
     height: 25px;
@@ -2078,6 +2321,10 @@ main{
 .f-soc-contact{
 		font-size: 1.5em;
 		letter-spacing: 1px;
+}
+.f-lang{
+	padding: 5px 0;
+	pointer-events: auto;
 }
 
 
